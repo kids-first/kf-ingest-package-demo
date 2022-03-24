@@ -9,7 +9,15 @@
 
 Run a test ingest package
 
-## Python Noe
+# Installation
+
+Clone this repo:
+
+'''sh
+git clone git@github.com:kids-first/kf-ingest-package-demo.git
+'''
+
+## Python Note
 
 Make sure that you are running *at least* python v3.6 or greater.
 
@@ -31,12 +39,6 @@ pip install psycopg2-binary
 pip install git+https://github.com/kids-first/kf-lib-data-ingest.git@latest-release
 '''
 <!-- markdownlint-enable MD034 -->
-
-### Install the ingest package repo
-
-'''sh
-git clone git@github.com:kids-first/kf-ingest-package-demo.git
-'''
 
 ## Run the test ingest package
 
