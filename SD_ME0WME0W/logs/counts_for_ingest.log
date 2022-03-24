@@ -1,0 +1,95 @@
+======================
+COUNT ANALYSIS RESULTS
+======================
+
+✅ Count Analysis Passed!
+Ingest package: /Users/kelmana/Documents/kids-first/kf-ingest-packages/kf_ingest_packages/packages/SD_ME0WME0W/ingest_package_config.py
+Completed at: 2019-09-17T17:20:10.634696-04:00
+
+ExtractStage
+============
+
+UNIQUE COUNTS:
+{'BIOSPECIMEN_GROUP|ID': 16,
+ 'BIOSPECIMEN|ANALYTE': 2,
+ 'BIOSPECIMEN|ID': 16,
+ 'DIAGNOSIS|NAME': 2,
+ 'FAMILY|ID': 3,
+ 'PARTICIPANT|FATHER_ID': 4,
+ 'PARTICIPANT|GENDER': 3,
+ 'PARTICIPANT|ID': 9,
+ 'PARTICIPANT|MOTHER_ID': 4,
+ 'PHENOTYPE|EVENT_AGE_DAYS': 6,
+ 'PHENOTYPE|NAME': 3,
+ 'PHENOTYPE|OBSERVED': 2,
+ 'SEQUENCING|CENTER|TARGET_SERVICE_ID': 1}
+
+✅ All counts are as expected.
+
+EXPECTED COUNT CHECKS:
++----------------+------------+---------+---------+
+| Key            |   Expected |   Found | Equal   |
+|----------------+------------+---------+---------|
+| FAMILY|ID      |          3 |       3 | ✅      |
+| PARTICIPANT|ID |          9 |       9 | ✅      |
+| BIOSPECIMEN|ID |         16 |      16 | ✅      |
++----------------+------------+---------+---------+
+
+TransformStage
+==============
+
+UNIQUE COUNTS:
+{'BIOSPECIMEN_DIAGNOSIS|UNIQUE_KEY': 16,
+ 'BIOSPECIMEN_GROUP|ID': 16,
+ 'BIOSPECIMEN_GROUP|UNIQUE_KEY': 16,
+ 'BIOSPECIMEN|ANALYTE': 2,
+ 'BIOSPECIMEN|ID': 16,
+ 'BIOSPECIMEN|UNIQUE_KEY': 16,
+ 'DIAGNOSIS|NAME': 2,
+ 'DIAGNOSIS|UNIQUE_KEY': 13,
+ 'FAMILY|ID': 3,
+ 'FAMILY|UNIQUE_KEY': 3,
+ 'PARTICIPANT|FATHER_ID': 4,
+ 'PARTICIPANT|GENDER': 2,
+ 'PARTICIPANT|ID': 9,
+ 'PARTICIPANT|MOTHER_ID': 4,
+ 'PARTICIPANT|UNIQUE_KEY': 9,
+ 'PHENOTYPE|EVENT_AGE_DAYS': 6,
+ 'PHENOTYPE|NAME': 3,
+ 'PHENOTYPE|OBSERVED': 2,
+ 'PHENOTYPE|UNIQUE_KEY': 27,
+ 'SEQUENCING|CENTER|TARGET_SERVICE_ID': 1}
+
+✅ All counts are as expected.
+
+EXPECTED COUNT CHECKS:
++----------------+------------+---------+---------+
+| Key            |   Expected |   Found | Equal   |
+|----------------+------------+---------+---------|
+| FAMILY|ID      |          3 |       3 | ✅      |
+| PARTICIPANT|ID |          9 |       9 | ✅      |
+| BIOSPECIMEN|ID |         16 |      16 | ✅      |
++----------------+------------+---------+---------+
+
+COMPARING COUNTS
+================
+
+✅ Column names are equal between ExtractStage and TransformStage
+
+-----
+
+✅ Column values for BIOSPECIMEN|ANALYTE are equal between ExtractStage and TransformStage
+✅ Column values for BIOSPECIMEN|ID are equal between ExtractStage and TransformStage
+✅ Column values for DIAGNOSIS|NAME are equal between ExtractStage and TransformStage
+✅ Column values for PHENOTYPE|EVENT_AGE_DAYS are equal between ExtractStage and TransformStage
+✅ Column values for BIOSPECIMEN_GROUP|ID are equal between ExtractStage and TransformStage
+✅ Column values for PARTICIPANT|GENDER are equal between ExtractStage and TransformStage
+✅ Column values for PHENOTYPE|OBSERVED are equal between ExtractStage and TransformStage
+✅ Column values for SEQUENCING|CENTER|TARGET_SERVICE_ID are equal between ExtractStage and TransformStage
+✅ Column values for PARTICIPANT|MOTHER_ID are equal between ExtractStage and TransformStage
+✅ Column values for PARTICIPANT|FATHER_ID are equal between ExtractStage and TransformStage
+✅ Column values for FAMILY|ID are equal between ExtractStage and TransformStage
+✅ Column values for PARTICIPANT|ID are equal between ExtractStage and TransformStage
+✅ Column values for PHENOTYPE|NAME are equal between ExtractStage and TransformStage
+
+-----
