@@ -2,7 +2,7 @@
   <img src="docs/kids_first_logo.svg" alt="Kids First repository logo" width="660px" />
 </p>
 <p align="center">
-  <a href="https://github.com/kids-first/kf-template-repo/blob/master/LICENSE"><img src="https://img.shields.io/github/license/kids-first/kf-template-repo.svg?style=for-the-badge"></a>
+  <a href="https://github.com/kids-first/kf-ingest-package-demo/blob/master/LICENSE"><img src="https://img.shields.io/github/license/kids-first/kf-ingest-package-demo.svg?style=for-the-badge"></a>
 </p>
 
 # Instructions to run test ingest package
