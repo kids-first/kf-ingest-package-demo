@@ -9,6 +9,10 @@
 
 Run a test ingest package
 
+## Python Noe
+
+Make sure that you are running *at least* python v3.6 or greater.
+
 ## Instal the ingest library and the ingest package repo
 
 ### Setup virtual environment (optional but recommended)
@@ -46,22 +50,42 @@ cd kf-ingest-package-demo/SD_ME0WME0W
 
 try to curl the study in your target dataservice.
 
-From here on out, i'm using the QA KidsFirst Dataservice as the target
+From here on out, i'm using the localhost:5000 as the target
 dataservice url. Make sure to replace that value with the appropriate url.
 
 ```sh
-curl https://kf-api-dataservice-qa.kidsfirstdrc.org/studies/SD_ME0WME0W 
+curl http://localhost:5000/studies/SD_ME0WME0W 
 ```
 
-If that returns a bunch ofinformation about a study, move on to the next step.
+If that returns a bunch of information about a study, move on to the next step.
 
 if that returns a 404, you'll need to create the study in your target
 dataservice:
 
 ```sh
-curl -XPOST -H "Content-Type: application/json"\ 
-https:/localhost:5000/studies -d \
-'{"attribution":"Hamburgerz","data_access_authority":"dbGaP","domain":"OTHER","external_id":"CHEEZBURGER","kf_id":"SD_ME0WME0W","name":"Mr. Meows Memorable Meme Emporium \ud83d\uddbc","program":"MEOW","release_status":null,"short_code":"MEOW-MEOW","short_name":"Cat Pics","version":"PLZ","visible":true}'
+curl -XPOST -H "Content-Type: application/json" http://localhost:5000/studies \ 
+-d '{"attribution":"Hamburgerz","data_access_authority":"dbGaP","domain":"OTHER","external_id":"CHEEZBURGER","kf_id":"SD_ME0WME0W","name":"Mr. Meows Memorable Meme Emporium \ud83d\uddbc","program":"MEOW","release_status":null,"short_code":"MEOW-MEOW","short_name":"Cat Pics","version":"PLZ","visible":true}'
+```
+
+### Make sure that the target dataservice has the sequencing center you're ingesting to
+
+try to curl the study in your target dataservice.
+
+From here on out, i'm using the QA KidsFirst Dataservice as the target
+dataservice url. Make sure to replace that value with the appropriate url.
+
+```sh
+curl http://localhost:5000/sequencing-centers/SC_CATTVETT 
+```
+
+If that returns a bunch of information about a sequencing center, move on to
+the next step.
+
+if that returns a 404, you'll need to create the study in your target
+dataservice:
+
+```sh
+curl -XPOST -H "Content-Type: application/json"  http://localhost:5000/sequencing-centers -d '{"kf_id":"SC_CATTVETT", "name":"Feline Diagnostics", "visible": "True"}'
 ```
 
 ## Run the ingest package
@@ -70,5 +94,5 @@ run the following to ingest files into your target dataservice (remember to
 change the url that of yours!)
 
 ```sh
-kidsfirst ingest . -t https://kf-api-dataservice-qa.kidsfirstdrc.org
+kidsfirst ingest . -t http://localhost:5000
 ```

@@ -29,7 +29,7 @@ operations = [
     keep_map(in_col="sample", out_col=CONCEPT.BIOSPECIMEN_GROUP.ID),
     constant_map(
         out_col=CONCEPT.SEQUENCING.CENTER.TARGET_SERVICE_ID,
-        m=constants.SEQUENCING.CENTER.BAYLOR.KF_ID,
+        m=constants.SEQUENCING.CENTER.FELINE_DIAGNOSTICS.KF_ID,
     ),
     value_map(
         in_col="analyte",
